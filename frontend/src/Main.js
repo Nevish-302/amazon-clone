@@ -8,7 +8,7 @@ import order from "./images/orders.jpg"
 import cart from "./images/cart.jpg"
 import search from "./images/search.png"
 const Main=()=>{
-    return (
+    return(
         <>
     <nav>
         <ul>
