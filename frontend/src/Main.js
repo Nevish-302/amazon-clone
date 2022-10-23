@@ -7,6 +7,7 @@ import signin from "./images/signin.jpg"
 import order from "./images/orders.jpg"
 import cart from "./images/cart.jpg"
 import search from "./images/search.png"
+import { Link, Outlet} from "react-router-dom";
 const Main=()=>{
     return(
         <>
@@ -17,19 +18,19 @@ const Main=()=>{
             <li><img src={address}></img></li>
             <li><div>
             <select id="options">
-                <option>Amazon Fashion</option>
                 <option>All Categories</option>
+                <option>Amazon Fashion</option>
                 <option>Alexa Skills</option>
                 <option>Amazon Devices</option>
             </select>
             <input type="text"></input>
-            <div className="search_logo"><img src={search}></img></div>
+            <Link to="/"><div className="search_logo"><img src={search}></img></div></Link>
             </div></li>
             <li><img src={flag}></img></li>
             <li><img src={signin}></img>
             </li>
             <li><img src={order}></img></li>
-            <li><img src={cart}></img></li>
+            <li><Link to="/cart"><img src={cart}></img></Link></li>
         </ul>
     </nav>
     <div className="browse">
@@ -49,6 +50,7 @@ const Main=()=>{
         <li>Amazon Pay</li>
         </ul>
     </div>
+    <Outlet/>
     </>
     )
 }
