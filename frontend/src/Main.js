@@ -13,7 +13,7 @@ const Main=()=>{
         <>
     <nav>
         <ul>
-            <li><img src={logo}></img>
+            <li><Link to="/"><img src={logo}></img></Link>
             </li>
             <li><img src={address}></img></li>
             <li><div>
@@ -24,7 +24,7 @@ const Main=()=>{
                 <option>Amazon Devices</option>
             </select>
             <input type="text"></input>
-            <Link to="/"><div className="search_logo"><img src={search}></img></div></Link>
+            <div className="search_logo"><img src={search}></img></div>
             </div></li>
             <li><img src={flag}></img></li>
             <li><img src={signin}></img>
