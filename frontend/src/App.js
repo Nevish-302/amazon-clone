@@ -4,8 +4,10 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Offer from "./main_components/Offer";
 import Cart from "./main_components/Cart";
+import Register2 from "./Register2";
 import Account from "./main_components/Account";
 import Login2 from "./Login2";
+import Register3 from "./Register3";
 function App() {
   return (
   
@@ -19,6 +21,8 @@ function App() {
         <Route  path="/signup" element={<Signup/>}></Route>
         <Route  path="/login" element ={<Login/>}></Route>
         <Route path="/login2" element={<Login2/>}></Route>
+        <Route path="/register2" element={<Register2/>}></Route>
+        <Route path="/register3" element={<Register3/>}></Route>
       </Routes>
     </div>
   );

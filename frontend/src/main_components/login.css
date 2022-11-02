@@ -9,6 +9,13 @@ img {
     margin: 0;
     padding: 0;
 }
+.img_solve{
+    width: 70%;
+    height: auto;
+}
+.solve{
+    text-align: center;
+}
 .continue {
     height: 30px;
     width: 100%;
@@ -59,11 +66,15 @@ ul{
 .caption{
     margin-top: 0;
 }
+.far{
+    display: flex;
+    justify-content: space-between;
+}
 label{
     font-weight:  bold;
     font-size: smaller;
 }
-.email,.name,.number,.password{
+.email,.name,.number,.password,.OTP{
     margin: 5px 0;
     width: 97.2%;
     height: 22px;
