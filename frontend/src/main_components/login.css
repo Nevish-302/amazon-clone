@@ -37,6 +37,7 @@ hr{
     background-color: rgb(233, 227, 227);
     border: 1px solid gray;
     margin-bottom: 20px;
+    border-radius: 5px;
 }
 ul{
     display: flex;
