@@ -2,7 +2,7 @@ import { Route,Routes } from "react-router-dom";
 import Main from "./Main";
 import Login from "./Login";
 import Signup from "./Signup";
-import Offer from "./main_components/Offer";
+import Offer from "./main_components/Landing_page";
 import Cart from "./main_components/Cart";
 import Register2 from "./Register2";
 import Account from "./main_components/Account";
