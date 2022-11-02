@@ -23,7 +23,7 @@ const Signup=()=>{
             <input type="password" placeholder="At least 6 characters" className="password"></input><br></br>
             <h5 className="caption">Passwords must be at least 6 characters.</h5>
             <h5>By enrolling your mobile phone number, you consent to receive automated security notifications via text message from Amazon. Message and data rates may apply.</h5>
-            <button className="continue">Continue</button>
+            <Link to="/register2"><button className="continue">Continue</button></Link>
             <hr className="below"></hr>
             <div>
             <h5>Already have an account ?<Link to="/login"> Sign in</Link></h5>
