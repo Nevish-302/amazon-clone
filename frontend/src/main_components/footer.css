@@ -1,0 +1,23 @@
+.back{
+    background-color: #6a6c91;
+    color: white;
+    text-align: center;
+    padding: 1%;
+}
+.tables{
+    color: rgb(255, 255, 255);
+    margin: 4% auto;
+    margin-top: 0;
+    margin-right: 4%;
+    width: 80%;
+}
+.top_row{
+    text-align: left;
+}
+.bottom{
+    background-color: #232F3E;
+    padding: 4%;
+}
+.next{
+    background-color: white;
+}

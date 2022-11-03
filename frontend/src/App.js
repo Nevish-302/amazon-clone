@@ -8,6 +8,8 @@ import Register2 from "./Register2";
 import Account from "./main_components/Account";
 import Login2 from "./Login2";
 import Register3 from "./Register3";
+import Cart_login from "./main_components/Cart_login";
+import Post from "./Post";
 function App() {
   return (
   
@@ -17,6 +19,8 @@ function App() {
           <Route exact path="" element={<Offer/>}></Route>
           <Route path="cart" element={<Cart/>}></Route>
           <Route path="account" element={<Account/>}></Route>
+          <Route path="login_cart" element={<Cart_login/>} ></Route>
+          <Route path="post" element={<Post/>}></Route>
         </Route>
         <Route  path="/signup" element={<Signup/>}></Route>
         <Route  path="/login" element ={<Login/>}></Route>

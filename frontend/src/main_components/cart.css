@@ -36,3 +36,13 @@ h3{
     border: 0.2px solid black;
     background-color: white;
 }
+.personal{
+    text-align: center;
+}
+.signin_{
+    background-color: rgb(255, 196, 0);
+    width: 20%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 0;
+}
