@@ -23,9 +23,12 @@ const Cart=()=>{
         <div>
             <hr></hr>
         {/*designing done till here*/}
+        <div className="personal">
         <h4>See personalized recommendations</h4>
-        <button>Sign in</button>
+        <button className="signin_">Sign in</button>
         <h5>New customer? Start here.</h5>
+        <hr></hr>
+        </div>
         </div>
         <Footer/>
         </>
