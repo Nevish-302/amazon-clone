@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css"
-const footer=()=>{
+const Footer=()=>{
     return (
         <>
         <div className="back">Back to top</div>
@@ -43,4 +43,4 @@ const footer=()=>{
         </>
     )
 }
-export default footer;
+export default Footer;

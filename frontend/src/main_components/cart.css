@@ -46,9 +46,7 @@ h3{
     border-radius: 5px;
     border: 0;
 }
-body{
-    background-color: rgb(191, 187, 187);
-}
+
 .interior{
     background-color: rgb(255, 255, 255);
     width: 98%;
@@ -69,4 +67,5 @@ body{
 .main{
     display: flex;
     padding: 1%;
+    background-color: rgb(219, 215, 215);
 }
