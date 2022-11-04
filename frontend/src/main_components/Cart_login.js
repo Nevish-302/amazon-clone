@@ -1,8 +1,10 @@
 import React from "react";
+import Footer from "./Footer";
 import "./cart.css"
 import Card from "./Contain";
 const Cart_login=(props)=>{
     return(
+        <>
         <div className="main">
             <div className="interior">
                 <h1>Shopping Cart</h1>
@@ -21,6 +23,8 @@ This order contains a gift
 <button className="continue btn">Proceed to buy</button>
 </div>
         </div>
+        <Footer/>
+        </>
     )
 }
 export default Cart_login;
