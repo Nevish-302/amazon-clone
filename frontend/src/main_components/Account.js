@@ -1,5 +1,7 @@
 import React from "react";
 import "./account.css";
+import {Link} from "react-router-dom";
+import Order from "./YourOrder";
 const Account=()=>{
     return(
         <div><div className="account-main">
@@ -7,6 +9,7 @@ const Account=()=>{
             Your Account
         </h1>
         <div className="account-boxes">
+            <Link to="/account/order">
             <div className="account-box">
                 <div className="account-image">
                     <img alt="Your Orders" height = "44.25px" src="https://images-na.ssl-images-amazon.com/images/G/31/x-locale/cs/ya/images/Box._CB485927553_.png"></img>
@@ -20,6 +23,8 @@ const Account=()=>{
                     </div>
                 </div>
             </div>
+            </Link>
+            <Link to="/account/security">
             <div className="account-box">
                 <div className="account-image">
                     <img alt="Login & Security" height = "52.88px" src="https://m.media-amazon.com/images/G/31/x-locale/cs/ya/images/sign-in-lock._CB485931504_.png"></img>
@@ -32,7 +37,9 @@ const Account=()=>{
                         Edit login, name, and mobile number
                     </div>
                 </div>
-            </div><div className="account-box">
+            </div>
+            </Link><Link to="/account/prime">
+            <div className="account-box">
                 <div className="account-image">
                     <img alt="Prime" height = "47.38px" src="https://m.media-amazon.com/images/G/31/x-locale/cs/ya/images/rc_prime._CB485926807_.png"></img>
                 </div>
@@ -44,7 +51,9 @@ const Account=()=>{
                         View benefits and payment settings
                     </div>
                 </div>
-            </div><div className="account-box">
+            </div></Link>
+            <Link to="/account/address">
+            <div className="account-box">
                 <div className="account-image">
                     <img alt="Your Orders" height = "51.23px" src="https://m.media-amazon.com/images/G/31/x-locale/cs/ya/images/address-map-pin._CB485934183_.png"></img>
                 </div>
@@ -56,7 +65,9 @@ const Account=()=>{
                         Edit addresses for orders and gifts
                     </div>
                 </div>
-            </div><div className="account-box">
+            </div>
+            </Link>
+            <Link to="/account/payment"><div className="account-box">
                 <div className="account-image">
                     <img alt="Your Orders" height = "47.38px" src="https://m.media-amazon.com/images/G/31/x-locale/cs/ya/images/Payments._CB485926359_.png"></img>
                 </div>
@@ -68,7 +79,8 @@ const Account=()=>{
                         Edit or add payment methods
                     </div>
                 </div>
-            </div><div className="account-box">
+            </div>
+            </Link><Link to="/account/amazon_pay"><div className="account-box">
                 <div className="account-image">
                     <img alt="Your Orders" height = "47.38px" src="https://m.media-amazon.com/images/G/31/x-locale/cs/ya/images/amazon_pay._CB485946857_.png"></img>
                 </div>
@@ -80,7 +92,8 @@ const Account=()=>{
                         Add money to your balance
                     </div>
                 </div>
-            </div><div className="account-box">
+            </div></Link>
+            <Link to="/account/contact_us"><div className="account-box">
                 <div className="account-image">
                     <img alt="Your Orders" height = "63px" src="https://m.media-amazon.com/images/G/31/x-locale/cs/help/images/gateway/self-service/contact_us._CB623781998_.png"></img>
                 </div>
@@ -92,6 +105,7 @@ const Account=()=>{
                     </div>
                 </div>
             </div>
+            </Link>
         </div>
         <br></br>
         <hr ></hr>
