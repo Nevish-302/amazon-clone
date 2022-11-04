@@ -1,4 +1,4 @@
-const verify = require(jsonwebtoken)
+const verify = require(`jsonwebtoken`)
 const user_details = require(`../models/user_details.model`)
 const {createAccessToken, createRefreshToken, sendRefreshToken} =  require('./tokens')
 
