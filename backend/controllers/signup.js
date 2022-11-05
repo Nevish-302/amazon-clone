@@ -1,7 +1,7 @@
 const user_details = require('../models/user_details.model')
 const bcrypt = require('bcrypt')
 
-const signup = async (req, res) => {
+const signUp = async (req, res) => {
     const {name, mobile, email, password} = await req.body
     const saltrounds = 10
     bcrypt.hash(password, saltrounds, (err, hash) => {
@@ -14,4 +14,4 @@ const signup = async (req, res) => {
     );
 }
 
-module.exports = {signup}
+module.exports = {signUp}

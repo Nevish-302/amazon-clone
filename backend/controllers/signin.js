@@ -2,7 +2,7 @@ const user_details = require('../models/user_details.model')
 const bcrypt = require('bcrypt')
 const {createAccesshToken, createRefreshToken, sendAccessToken, sendRefreshToken} = require(`../auth/tokens`)
 
-const signin = async (req, res) => {
+const signIn = async (req, res) => {
     const {username, password} =  await req.body
     try {
     const user = await user_details.findOne({email : username})
@@ -27,5 +27,5 @@ const signin = async (req, res) => {
 }
 
 module.exports = {
-    signin
+    signIn
 }

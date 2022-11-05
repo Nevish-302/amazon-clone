@@ -1,18 +1,17 @@
-const cartDetails = require('../models/user_cart_details')
-const {isAuth} = require(`../auth/isAuth`)
+const cartDetails = require(`../models/user_cart_details`)
 
 const getItems = async (req, res) => {
+    try {
     const userId = isAuth()
-     
-    const wishList = await cartDetails.find({userId: userId}).then((data) => {
-        if (!data.wishList)  {
-            console.log("No items in wish list");
-            res.status(400).json({msg : "No items in wish list"})
-        }
-        res.status(200).json(data.wishList);    
-    })
+    const user_orders = await cartDetails.find({userid : userId})
+    if(!user_orders.cart)
+    res.send(`There are no orders for this user`)
+    res.json({orders : user_orders.cart})}
+    catch (err) {
+        console.log(err)
+        res.send(err)
+    }
 }
-
 
 const addItems = async (req, res) => {
     try {
@@ -25,7 +24,7 @@ const addItems = async (req, res) => {
                     userId : userId,
                 },
                 {
-                    $push: { wishList: {productId : item.id}}
+                    $push: { cart: {productId : item.id, number : item.number}}
                 }
             )
         }
@@ -47,7 +46,7 @@ const removeItems = async (req, res) => {
                     userId : userId,
                 },
                 {
-                    $pull: { wishList: {productId : item.id}}
+                    $pull: { cart: {productId : item.id, number : item.number}}
                 }
             )
         }
