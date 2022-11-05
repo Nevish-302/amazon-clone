@@ -1,0 +1,66 @@
+.main_body{
+    display: flex;
+    width: 100%;
+}
+.col1{
+    width: 25%;
+    text-align: center;
+    padding: 3% 0;
+}
+.col2{
+    width: 50%;
+}
+.post_img{
+    width: 70%;
+    height: auto;
+    margin: auto;
+}
+.middle{
+    text-align: left;
+    width: 90%;
+    margin: 2% 3% ;
+}
+.post_box{
+    border: 0.5px solid grey;
+    border-radius: 5px;
+}
+.col3{
+    border: 2px solid gray;
+    margin-bottom: 1%;
+}
+.col3{
+    width: 21%;
+    margin-top: 2%;
+    margin-left: 0;
+    padding: 1%;
+    border-radius: 5px;
+}
+.btncontinue{
+    border-radius: 10px;
+}
+.btnsignin{
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+}
+.inner{
+    padding: 10px;
+}
+.bracket{
+    display: flex;
+    justify-content: space-between;
+}
+.bracket h3{
+    line-height: 120%;
+    margin: 0;
+}
+.bracket h4{
+    margin: 0;
+    line-height: 120%;
+}
+.costs1{
+    text-align: right;
+}
+.col3 h3{
+    font-weight: normal;
+}

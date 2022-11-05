@@ -1,0 +1,22 @@
+.cart_contain{
+    display: flex;
+}
+.contain_img{
+    width: 30%;
+    height: auto;
+}
+.select_opt{
+    border-radius: 5px;
+    background-color: rgb(229, 226, 226);
+    padding: 1%;
+}
+.cart_contain h4{
+    margin: 1%;
+}
+span{
+    margin-left: 15%;
+    margin-top: 3%;
+}
+.spacing{
+    letter-spacing: 0.1rem;
+}

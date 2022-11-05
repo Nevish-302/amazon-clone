@@ -9,6 +9,13 @@ img {
     margin: 0;
     padding: 0;
 }
+.img_solve{
+    width: 70%;
+    height: auto;
+}
+.solve{
+    text-align: center;
+}
 .continue {
     height: 30px;
     width: 100%;
@@ -28,7 +35,7 @@ li{
     list-style: none;
 }
 hr{
-    border: 1px solid rgb(170, 170, 170);
+    color: gray;
 }
 .create{
     width: 27.5%;
@@ -37,6 +44,7 @@ hr{
     background-color: rgb(233, 227, 227);
     border: 1px solid gray;
     margin-bottom: 20px;
+    border-radius: 5px;
 }
 ul{
     display: flex;
@@ -58,11 +66,15 @@ ul{
 .caption{
     margin-top: 0;
 }
+.far{
+    display: flex;
+    justify-content: space-between;
+}
 label{
     font-weight:  bold;
     font-size: smaller;
 }
-.email,.name,.number,.password{
+.email,.name,.number,.password,.OTP{
     margin: 5px 0;
     width: 97.2%;
     height: 22px;

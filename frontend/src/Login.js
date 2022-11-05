@@ -10,7 +10,7 @@ const Login=()=>{
             <h1>Sign in</h1>
             <label>Email or mobile phone number</label><br></br>
             <input type="email" className="email"></input><br></br>
-            <button className="continue">Continue</button>
+            <Link to="/login2"><button className="continue">Continue</button></Link>
             <p>By continuing, you agree to Amazon's conditions of<br></br> Use and Privacy Notice</p>
             <span>Need help?</span>
         </div>

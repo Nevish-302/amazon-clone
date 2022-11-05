@@ -1,11 +1,12 @@
 import React from "react";
-const footer=()=>{
+import "./footer.css"
+const Footer=()=>{
     return (
         <>
-        <div>Back to top</div>
-        <div>
-            <table>
-                <tr>
+        <div className="back">Back to top</div>
+        <div className="bottom">
+            <table className="tables">
+                <tr className="top_row">
                     <th>Get to Know Us</th>
                     <th>Connect with Us</th>
                     <th>Make Money with us</th>
@@ -37,34 +38,9 @@ const footer=()=>{
                     <td>100% Purchase Protection</td>
                 </tr>
             </table>
-            <hr></hr>
-            <select>
-                <option>English - EN</option>
-                <option>Hindi</option>
-            </select><br></br>
-            <ul>
-                <li>Australia</li>
-                <li>Brazil</li>
-                <li>Canada</li>
-                <li>China</li>
-                <li>France</li>
-                <li>Germany</li>
-                <li>Italy</li>
-                <li>Japan</li>
-                <li>Mexico</li>
-                <li>Netherlands</li>
-                <li>Poland</li>
-                <li>Singapore</li>
-                <li>Spain</li>
-                <li>Turkey</li>
-                <li>United Arab Emirates</li>
-            </ul>
-            <ul>
-                <li>United Kingdom</li>
-                <li>United States</li>
-            </ul>
+            <hr className="next"></hr>
         </div>
         </>
     )
 }
-export default footer;
+export default Footer;
