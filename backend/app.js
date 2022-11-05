@@ -20,14 +20,12 @@ connection.once('open', ()=>
 
 //routes
 
-const register = require('./routes/register')
-const login = require('./routes/login')
+const auth = require('./routes/auth')
 
 
 //routing
 
-ap.use('/login', login)
-app.use('/register', register)
+app.use('/auth', auth)
 
 
 app.listen(5000, ()=>
