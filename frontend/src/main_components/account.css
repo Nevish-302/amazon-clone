@@ -66,6 +66,13 @@ body{
     margin-bottom: 5px;
 
 }
+.address_css input{
+    position: relative;
+    width: 22%;
+    padding-bottom: 9%;
+    padding-top: 9%;
+    text-align: center;
+}
 .display{
     display: flex;
 }
