@@ -83,3 +83,16 @@ body{
 .account-text-link > div > a {
     text-decoration: none;
 }
+.the_navbar{
+    background-color: rgb(216, 216, 216);
+    display: flex;
+}
+.horizontal_prime{
+    display: flex;
+}
+.box{
+    width: 30%;
+    padding: 10px;
+    border: black solid 1px;
+    border-radius: 5px;
+}
