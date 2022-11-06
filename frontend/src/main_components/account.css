@@ -66,6 +66,13 @@ body{
     margin-bottom: 5px;
 
 }
+.address_css input{
+    position: relative;
+    width: 22%;
+    padding-bottom: 9%;
+    padding-top: 9%;
+    text-align: center;
+}
 .display{
     display: flex;
 }
@@ -75,4 +82,17 @@ body{
 }
 .account-text-link > div > a {
     text-decoration: none;
+}
+.the_navbar{
+    background-color: rgb(216, 216, 216);
+    display: flex;
+}
+.horizontal_prime{
+    display: flex;
+}
+.box{
+    width: 30%;
+    padding: 10px;
+    border: black solid 1px;
+    border-radius: 5px;
 }
