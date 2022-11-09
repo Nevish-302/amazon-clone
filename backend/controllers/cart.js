@@ -1,4 +1,5 @@
 const cartDetails = require(`../models/user_cart_details`)
+const {isAuth} = require(`../auth/isAuth`)
 
 const getItems = async (req, res) => {
     try {
@@ -15,7 +16,7 @@ const getItems = async (req, res) => {
 
 const addItems = async (req, res) => {
     try {
-        const userId = isAuth()
+        const userId = await isAuth(req)
         const {item_s} = await req.body
         for (const item in item_s)
         {
@@ -28,6 +29,7 @@ const addItems = async (req, res) => {
                 }
             )
         }
+        console.log(`The item has been added successfully`)
     }
         catch (err) {
             console.log(err)
@@ -50,6 +52,7 @@ const removeItems = async (req, res) => {
                 }
             )
         }
+        console.log(`The item has been removed successfully`)
     }
         catch (err) {
             console.log(err)

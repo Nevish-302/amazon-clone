@@ -21,12 +21,16 @@ connection.once('open', ()=>
 //routes
 
 const auth = require('./routes/auth')
-
+const cart = require(`./routes/cart`)
+const orders = require(`./routes/orders`)
+const wishList = require('./routes/wishList')
 
 //routing
 
 app.use('/auth', auth)
-
+app.use(`/user/cart`, cart)
+app.use(`/user/orders`, orders)
+app.use(`/user/wishlist`, wishList)
 
 app.listen(5000, ()=>
 {

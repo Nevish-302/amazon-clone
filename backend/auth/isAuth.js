@@ -1,9 +1,10 @@
 const { verify } = require('jsonwebtoken');
 
-const isAuth = (req) => {
-    const token = req.cookies.refreshToken
+const isAuth = async (req) => {
+    const token = await req.cookies.refreshToken
+    console.log(req.cookies)
     if(!token) throw new Error (`You Need To Log In`)
-    const {userId} = verify(token, process.env.ACCESS_TOKEN_SECRET)
+    const {userId} = verify(token, `process.env.ACCESS_TOKEN_SECRET`)
     return {userId};
 };
 

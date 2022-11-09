@@ -12,10 +12,11 @@ const personal = new Schema(
         },
         mobileNumber : {
             required : true,   
-            type : Number,
+            type : String,
             length : 10,
         },
         email : {
+            unique : true,
             type : String
         },
         passHash : {

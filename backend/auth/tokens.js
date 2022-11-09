@@ -1,25 +1,26 @@
+const express = require(`express`)
 const {sign} = require(`jsonwebtoken`)
 
 const createAccessToken = (userId) => {
-return sign({userId}, process.env.ACCESS_TOKEN_SECRET, {expiresIn : `15m`,})
+return sign({userId}, `process.env.ACCESS_TOKEN_SECRET`, {expiresIn : `15m`,})
 }
 
-const createRefreshToken = (token) => {
-return sign({userId}, process.env.ACCESS_TOKEN_SECRET, {expiresIn : `7d`})
+const createRefreshToken = (userId) => {
+return sign({userId}, `process.env.ACCESS_TOKEN_SECRET`, {expiresIn : `7d`})
 }
 
-const sendRefreshToken = (req, res, refreshToken) => {
-    res.send({
-        accessToken, 
-    email : req.body.email});
+const sendAccessToken = (res, accessToken) => {
+    res.send({accessToken});
 
 }
 
-const sendAccessToken = (req, res, accessToken) => {
-    res.cookie('refreshtoken', token, {
+const sendRefreshToken = (res, refreshToken) => {
+    res.cookie('refreshToken', refreshToken, {
         httpOnly : true,
-        path : `/refresh_token`
+        path : `/refresh_token`,
+        secure: false,
     })
+    console.log(`Cookie is set`)
 }
 
 module.exports = {

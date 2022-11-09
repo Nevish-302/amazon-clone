@@ -1,5 +1,5 @@
 const cartDetails = require(`../models/user_cart_details`)
-const {isAuth} = require(`../auth/isAuth`)
+const {isAuth} = require('../auth/isAuth')
 
 const get_orders = async (req, res) => {
     try {
