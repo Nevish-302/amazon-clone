@@ -17,6 +17,10 @@ import Address from "./main_components/Address";
 import Payment from "./main_components/Payment";
 import AmazonPay from "./main_components/AmazonPay";
 import ContactUs from "./main_components/ContactUs";
+import Orders from "./main_components/Order";
+import BuyAgain from "./main_components/BuyAgain";
+import Notyetshipped from "./main_components/Yetshipped";
+import Cancelled from "./main_components/Cancelled";
 function App() {
   return (
   
@@ -28,8 +32,12 @@ function App() {
           <Route path="account" element={<Account/>}></Route>
           <Route path="login_cart" element={<Cart_login/>} ></Route>
           <Route path="post" element={<Post/>}></Route>
-          <Route path="account/order" element={<Order/>}></Route>
-          <Route path="account/security" element={<Security/>}></Route>
+          <Route path="account/order" element={<Order/>}>
+            <Route path="" element={<Orders/>}></Route>
+            <Route path="buyagain" element={<BuyAgain/>}></Route>
+            <Route path="notyetshipped" element={<Notyetshipped/>}></Route>
+            <Route path="cancelled" element={<Cancelled/>}></Route>
+          </Route>
           <Route path="account/prime" element={<Prime/>}></Route>
           <Route path="account/address" element={<Address/>}></Route>
           <Route path="account/payment" element={<Payment/>}></Route>
@@ -41,6 +49,7 @@ function App() {
         <Route path="/login2" element={<Login2/>}></Route>
         <Route path="/register2" element={<Register2/>}></Route>
         <Route path="/register3" element={<Register3/>}></Route>
+        <Route path="/account/security" element={<Security/>}></Route>
       </Routes>
     </div>
   );

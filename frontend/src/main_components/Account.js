@@ -1,7 +1,7 @@
 import React from "react";
 import "./account.css";
 import {Link} from "react-router-dom";
-import Order from "./YourOrder";
+import order from "./YourOrder";
 const Account=()=>{
     return(
         <div><div className="account-main">
