@@ -17,8 +17,7 @@ const sendAccessToken = (res, accessToken) => {
 const sendRefreshToken = (res, refreshToken) => {
     res.cookie('refreshToken', refreshToken, {
         httpOnly : true,
-        path : `/refresh_token`,
-        secure: false,
+    //    path : `/refresh_token`,
     })
     console.log(`Cookie is set`)
 }

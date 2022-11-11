@@ -3,7 +3,7 @@ const {isAuth} = require(`../auth/isAuth`)
 
 const get_orders = async (req, res) => {
     try {
-    const userId = isAuth()
+    const userId = isAuth(req)
     const user_orders = await cartDetails.find({userid : userId})
     if(!user_orders.orders)
     res.send(`There are no orders for this user`)
@@ -16,16 +16,16 @@ const get_orders = async (req, res) => {
 
 const add_orders = async (req, res) => {
     try {
-        const userId = isAuth()
+        const userId = isAuth(req)
         const {order_s} = await req.body
-        for (const order in order_s)
+        for (let i = 0 ; i <  order_s.length; i++)
         {
-            cartDetails.updateOne(
+            cartDetails.findOneAndUpdate(
                 {
                     userId : userId,
                 },
                 {
-                    $push: { orders: {productId : order.id, number : order.number}}
+                    $push: { orders: {productId : order_s[i].id, number : order_s[i].number}}
                 }
             )
         }
@@ -38,16 +38,16 @@ const add_orders = async (req, res) => {
 
 const cancel_orders = async (req, res) => {
     try {
-        const userId = isAuth()
+        const userId = isAuth(req)
         const {order_s} = await req.body
-        for (const order in order_s)
+        for (let i = 0 ; i <  order_s.length; i++)
         {
-            cartDetails.updateOne(
+            cartDetails.findOneAndUpdate(
                 {
                     userId : userId,
                 },
                 {
-                    $pull: { orders: {productId : order.id, number : order.number}}
+                    $pull: { orders: {productId : order_s[i].id, number : order_s[i].number}}
                 }
             )
         }

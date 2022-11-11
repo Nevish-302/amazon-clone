@@ -2,7 +2,7 @@ const cartDetails = require('../models/user_cart_details')
 const {isAuth} = require(`../auth/isAuth`)
 
 const getItems = async (req, res) => {
-    const userId = isAuth()
+    const userId = isAuth(req)
      
     const wishList = await cartDetails.find({userId: userId}).then((data) => {
         if (!data.wishList)  {
@@ -16,7 +16,7 @@ const getItems = async (req, res) => {
 
 const addItems = async (req, res) => {
     try {
-        const userId = isAuth()
+        const userId = isAuth(req)
         const {item_s} = await req.body
         for (const item in item_s)
         {
@@ -38,7 +38,7 @@ const addItems = async (req, res) => {
 
 const removeItems = async (req, res) => {
     try {
-        const userId = isAuth()
+        const userId = isAuth(req)
         const {item_s} = await req.body
         for (const item in item_s)
         {
