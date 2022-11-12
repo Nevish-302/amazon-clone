@@ -1,9 +1,9 @@
-const products = require('../models/products')
+const products1 = require('../models/products1')
 
-const search = async (req, res) => {
+const search1 = async (req, res) => {
     try {
     const {name} = await req.body
-    products.find({title : {'$regex' : `${name}`, '$options' : 'i'}}).then(
+    products1.find({name : {'$regex' : `${name}`, '$options' : 'i'}}).then(
         product_s => {
             console.log(`some products were found`)
             res.send({items : product_s})
@@ -16,4 +16,4 @@ const search = async (req, res) => {
     }
 }
 
-module.exports = {search}
+module.exports = {search1}

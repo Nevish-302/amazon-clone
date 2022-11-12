@@ -1,9 +1,9 @@
-const products = require(`../models/products`)
+const products1 = require(`../models/products1`)
 
-const get_item = async (req, res) => {
+const get_item1 = async (req, res) => {
     try  {
         const {itemId} = await req.body
-        products.findOne({id : itemId}).then(
+        products1.findOne({_id : itemId}).then(
             product =>  {
             console.log(product)
             res.send(product)
@@ -15,4 +15,4 @@ const get_item = async (req, res) => {
     } 
 }
 
-module.exports = {get_item}
+module.exports = {get_item1}
