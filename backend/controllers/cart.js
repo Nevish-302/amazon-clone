@@ -1,11 +1,13 @@
 const cartDetails = require(`../models/user_cart_details`)
+const {isAuth} = require(`../auth/isAuth`)
 
 const getItems = async (req, res) => {
     try {
-    const userId = isAuth()
+    const userId = isAuth(req)
     const user_orders = await cartDetails.find({userid : userId})
     if(!user_orders.cart)
     res.send(`There are no orders for this user`)
+    else
     res.json({orders : user_orders.cart})}
     catch (err) {
         console.log(err)
@@ -15,19 +17,23 @@ const getItems = async (req, res) => {
 
 const addItems = async (req, res) => {
     try {
-        const userId = isAuth()
+        const userId = await isAuth(req)
         const {item_s} = await req.body
-        for (const item in item_s)
+        console.log(item_s, userId)
+        for (let i = 0 ; i <  item_s.length; i++)
         {
-            cartDetails.updateOne(
+            cartDetails.findOneAndUpdate(
                 {
                     userId : userId,
                 },
                 {
-                    $push: { cart: {productId : item.id, number : item.number}}
+                    $push: { cart: {productId : item_s[i].id, number : item_s[i].number}}
                 }
             )
+            console.log(item_s[i])
         }
+        console.log(`The item has been added successfully`)
+        res.send(`Success`)
     }
         catch (err) {
             console.log(err)
@@ -37,19 +43,20 @@ const addItems = async (req, res) => {
 
 const removeItems = async (req, res) => {
     try {
-        const userId = isAuth()
+        const userId = isAuth(req)
         const {item_s} = await req.body
-        for (const item in item_s)
+        for (let i = 0 ; i <  item_s.length; i++)
         {
-            cartDetails.updateOne(
+            cartDetails.findOneAndUpdate(
                 {
                     userId : userId,
                 },
                 {
-                    $pull: { cart: {productId : item.id, number : item.number}}
+                    $pull: { cart: {productId : item_s[i].id, number : item_s[i].number}}
                 }
             )
         }
+        console.log(`The item has been removed successfully`)
     }
         catch (err) {
             console.log(err)

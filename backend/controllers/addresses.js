@@ -1,9 +1,9 @@
 const cartDetails = require(`../models/user_cart_details`)
-const {isAuth} = require(`../auth/isAuth`)
+const {isAuth} = require('../auth/isAuth')
 
 const get_orders = async (req, res) => {
     try {
-    const userId = isAuth(req)
+    const userId = isAuth()
     const user_orders = await cartDetails.find({userid : userId})
     if(!user_orders.orders)
     res.send(`There are no orders for this user`)
@@ -16,16 +16,16 @@ const get_orders = async (req, res) => {
 
 const add_orders = async (req, res) => {
     try {
-        const userId = isAuth(req)
+        const userId = isAuth()
         const {order_s} = await req.body
-        for (let i = 0 ; i <  order_s.length; i++)
+        for (const order in order_s)
         {
-            cartDetails.findOneAndUpdate(
+            cartDetails.updateOne(
                 {
                     userId : userId,
                 },
                 {
-                    $push: { orders: {productId : order_s[i].id, number : order_s[i].number}}
+                    $push: { orders: {productId : order.id, number : order.number}}
                 }
             )
         }
@@ -38,16 +38,16 @@ const add_orders = async (req, res) => {
 
 const cancel_orders = async (req, res) => {
     try {
-        const userId = isAuth(req)
+        const userId = isAuth()
         const {order_s} = await req.body
-        for (let i = 0 ; i <  order_s.length; i++)
+        for (const order in order_s)
         {
-            cartDetails.findOneAndUpdate(
+            cartDetails.updateOne(
                 {
                     userId : userId,
                 },
                 {
-                    $pull: { orders: {productId : order_s[i].id, number : order_s[i].number}}
+                    $pull: { orders: {productId : order.id, number : order.number}}
                 }
             )
         }
