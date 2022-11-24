@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended : true}))
 app.use(cookieParser())
 app.use(cors())
 
-const uri = `mongodb://127.0.0.1:27017/test`;
+const uri = `mongodb+srv://Just_user:Just_user@cluster0.iaihsai.mongodb.net/?retryWrites=true&w=majority`;
 mongoose.connect(uri, {useNewUrlParser : true})
 const connection = mongoose.connection
 connection.once('open', ()=>

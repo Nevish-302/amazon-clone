@@ -44,6 +44,7 @@ const Post=(props)=>{
                 </select>
                 </h3>
                 <button className="signin btnsignin">Add to Cart</button>
+                <button >Add to Wishlist</button>
                 <button className="continue btncontinue">Buy Now</button>
             </div>
         </div>
