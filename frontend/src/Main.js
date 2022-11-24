@@ -18,10 +18,35 @@ const Main=()=>{
             <li><img src={address}></img></li>
             <li><div>
             <select id="options">
+                <option>All</option>
                 <option>All Categories</option>
-                <option>Amazon Fashion</option>
-                <option>Alexa Skills</option>
-                <option>Amazon Devices</option>
+                <option>Home</option>
+                <option>Vehicle Parts & Accessories</option>
+                <option>Computers/Tablets & Networking</option>
+                <option>Business</option>
+                <option>Toys & Games</option>
+                <option>Sound & Vision</option>
+                <option>Books</option>
+                <option>Music</option>
+                <option>Health & Beauty</option>
+                <option>Video Games & Consoles</option>
+                <option>Clothes</option>
+                <option>Crafts</option>
+                <option>Sporting Goods</option>
+                <option>Films & TV</option>
+                <option>Mobile Phones & Communication</option>
+                <option>Jewellery & Watches</option>
+                <option>Dolls & Bears</option>
+                <option>Musical Instruments</option>
+                <option>Collectables</option>
+                <option>Cameras & Photography</option>
+                <option>Baby</option>
+                <option>Garden & Patio</option>
+                <option>Pet Supplies</option>
+                <option>Art</option>
+                <option>Antiques</option>
+                <option>Everything Else</option>
+                <option>Stamps</option>
             </select>
             <input type="text"></input>
             <div className="search_logo"><img src={search}></img></div>

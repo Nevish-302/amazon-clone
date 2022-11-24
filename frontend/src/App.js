@@ -21,6 +21,9 @@ import Orders from "./main_components/Order";
 import BuyAgain from "./main_components/BuyAgain";
 import Notyetshipped from "./main_components/Yetshipped";
 import Cancelled from "./main_components/Cancelled";
+import Newaddress from "./New_Address";
+import Search from "./Search";
+import Wishlist from "./Wishlist";
 function App() {
   return (
   
@@ -32,6 +35,8 @@ function App() {
           <Route path="account" element={<Account/>}></Route>
           <Route path="login_cart" element={<Cart_login/>} ></Route>
           <Route path="post" element={<Post/>}></Route>
+          <Route path="search" element={<Search/>}></Route>
+          <Route path="wishlist" element={<Wishlist/>}></Route>
           <Route path="account/order" element={<Order/>}>
             <Route path="" element={<Orders/>}></Route>
             <Route path="buyagain" element={<BuyAgain/>}></Route>
@@ -43,6 +48,7 @@ function App() {
           <Route path="account/payment" element={<Payment/>}></Route>
           <Route path="account/amazon_pay" element={<AmazonPay/>}></Route>
           <Route path="account/contact_us" element={<ContactUs/>}></Route>
+          <Route path="account/new_address" element={<Newaddress/>}></Route>
         </Route>
         <Route  path="/signup" element={<Signup/>}></Route>
         <Route  path="/login" element ={<Login/>}></Route>
