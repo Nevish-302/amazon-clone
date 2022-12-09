@@ -3,15 +3,15 @@ import white from "./images/white_logo.jpg";
 import "./main_components/login.css"
 import {Link} from "react-router-dom";
 const Signup=()=>{
-    const [name,setName]=useState('');
-    const [email,setEmail]=useState('');
-    const [number,setNumber]=useState('');
-    const [password,setPassword]=useState('');
+    const [name,setName]=useState("");
+    const [email,setEmail]=useState("");
+    const [mobile,setMobile]=useState("");
+    const [password,setPassword]=useState("");
     const handleChange_name = event => {
         setName(event.target.value);
       };
-      const handleChange_number = event => {
-        setNumber(event.target.value);
+      const handleChange_mobile = event => {
+        setMobile(event.target.value);
       };
       const handleChange_email = event => {
         setEmail(event.target.value);
@@ -21,19 +21,16 @@ const Signup=()=>{
       };
     const handleClick = event => {
         event.preventDefault();
-        fetch("http://localhost:5000",{
-                method:"POST",
-                headers:{
-                    'Content-Type': 'application/json'
-                },
-                body:JSON.stringify({
-                    name:name,
-                    mobileNumber:number,
-                    email:email,
-                    passHash:password
-                })
-            });
-        window.location.href='/register2';
+        const opt={name,mobile,email,password}
+        console.log(opt)
+        fetch('http://localhost:5000/auth/signup',{
+          method:'POST',
+          body:JSON.stringify(opt)
+        }).then(()=>{
+          console.log("new user added");
+        }).catch((err)=>{
+          console.log(err.message);
+        })
       };
 
     return(
@@ -48,7 +45,7 @@ const Signup=()=>{
             <select className="code">
                 <option>IN +91</option>
             </select>
-            <input type="number" placeholder="Mobile number" className="number" onChange={handleChange_number} value={number}></input>
+            <input type="number" placeholder="Mobile number" className="number" onChange={handleChange_mobile} value={mobile}></input>
             </div>
             <label>Email(optional)</label><br></br>
             <input type="email" className="email" onChange={handleChange_email} value={email}></input><br></br>
