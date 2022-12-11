@@ -21,18 +21,23 @@ const Signup=()=>{
       };
     const handleClick = event => {
         event.preventDefault();
-        const opt={name,mobile,email,password}
-        console.log(opt)
-        fetch('http://localhost:5000/auth/signup',{
-          method:'POST',
-          body:JSON.stringify(opt)
-        }).then(()=>{
-          console.log("new user added");
-        }).catch((err)=>{
-          console.log(err.message);
-        })
+        addUser()
       };
-
+    const addUser=async()=>{
+      const data_=await fetch("http://localhost:5000/auth/signup",{
+        method:'POST',
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+          name:name,
+          email:email,
+          mobile:mobile,
+          password:password
+        })
+      }).then(res=>res.json())
+      console.log(data_)
+    }
     return(
     <div className="signup">
         <Link to="/"><img src={white}></img></Link>
