@@ -1,22 +1,43 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import "./main_components/navbar.css";
 import logo from "./images/amazon_logo.jpg"
 import address from "./images/address.jpg"
-import flag from "./images/flag.jpg"
+import flag_ from "./images/flag.jpg"
 import signin from "./images/signin.jpg"
 import order from "./images/orders.jpg"
 import cart from "./images/cart.jpg"
 import search from "./images/search.png"
 import { Link, Outlet} from "react-router-dom";
 const Main=()=>{
+    useEffect(()=>{
+        if (segment.startsWith("http://localhost:3000/")){
+            setFlag("/login")
+        }
+        else if (segment.length>=10){
+        setDisplay(segment.substring(0,9)+'...')
+        setFlag(`?id=${window.location.href.split("=").pop()}`)
+        }
+        else {
+            setDisplay(segment)
+            setFlag(`?id=${window.location.href.split("=").pop()}`)
+        }
+    })
+    const [final,setFinal]=useState('')
+    const [text,setText]=useState('All')
+    const search_text=(event)=>{
+        setText(event.target.value)
+    }
     const getInitialState=()=>{
         const value="All";
         return value;
     };
+    const [flag,setFlag]=useState();
     const [value,setValue]=useState(getInitialState);
     const handleChange=(e)=>{
         setValue(e.target.value);
     }
+    const [display,setDisplay]=useState('sign in');
+    const segment=window.location.href.split("=").pop();
     return(
         <>
     <nav>
@@ -56,12 +77,15 @@ const Main=()=>{
                 <option value="Everything Else">Everything Else</option>
                 <option value="Stamps">Stamps</option>
             </select>
-            <input type="text"></input>
-            <div className="search_logo"><img src={search}></img></div>
+            <input type="text" onChange={search_text}></input>
+            <div className="search_logo"><a href={'/search/'+text}><img src={search}></img></a></div>
             </div></li>
-            <li><img src={flag}></img></li>
-            <li><img src={signin}></img>
+            <li><img src={flag_}></img></li>
+            <Link to={flag}><li>
+            <h4 className="adding_account_email">Hello, {display}</h4>
+            <img src={signin} className="adding_account"></img>
             </li>
+            </Link>
             <li><img src={order}></img></li>
             <li><Link to="/cart"><img src={cart}></img></Link></li>
         </ul>

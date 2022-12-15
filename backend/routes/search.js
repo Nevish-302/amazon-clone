@@ -11,6 +11,6 @@ router.get('/q', search)
 
 router.get(`/item1`, get_item1)
 
-router.get('/q1', search1)
+router.get('/q1/:value_', search1)
 
 module.exports = router

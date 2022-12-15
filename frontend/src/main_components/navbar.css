@@ -10,6 +10,16 @@ nav ul li {
     padding: 0 ;
     margin: auto ;
 } 
+.adding_account{
+    height: 10%;
+    width: 100%;
+}
+.adding_account_email{
+    color: white;
+    font-style: bold;
+    margin: 0;
+    padding: 0 5%;
+}
 nav ul li img{
     height: 40px;
     margin: 0;

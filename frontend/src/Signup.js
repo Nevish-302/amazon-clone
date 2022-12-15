@@ -24,19 +24,27 @@ const Signup=()=>{
         addUser()
       };
     const addUser=async()=>{
+      var details={
+        'email':email,
+        'password':password,
+        'mobile':mobile,
+        'name':name
+      };
+      var formBody=[];
+      for (var property in details){
+        var encodedKey=encodeURIComponent(property);
+        var encodedValue=encodeURIComponent(details[property]);
+        formBody.push(encodedKey+'='+encodedValue);
+      }
+      formBody=formBody.join('&');
       const data_=await fetch("http://localhost:5000/auth/signup",{
         method:'POST',
         headers:{
-          "Content-Type":"application/json"
+          "Content-Type":"application/x-www-form-urlencoded"
         },
-        body:JSON.stringify({
-          name:name,
-          email:email,
-          mobile:mobile,
-          password:password
-        })
+        body:formBody
       }).then(res=>res.json())
-      console.log(data_)
+      window.location.href=`http://localhost:3000?id=${email}`;
     }
     return(
     <div className="signup">

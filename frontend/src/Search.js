@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./search.css"
 import Show from "./Show";
 import Sidebar from "./Sidebar";
@@ -19,7 +19,7 @@ const Search=()=>{
 </div>
 <div className="final_display">
 <Sidebar/>
-<Show/>
+<Show />
 </div>
 </div>
     )

@@ -6,19 +6,33 @@
     z-index: 0;
     position: absolute;
 }
+.banner{
+    background-color: rgb(241, 236, 236);
+}
+.divs img {
+    width: 100px;
+    height: 100px;
+}
 .divs,.coll{
     z-index: 1;
     margin-top: 17%;
-    background-color: white;
     width: 20%;
     margin-left: 2%;
     padding-left: 1%;
     padding-right: 1%;
 }
+.display_main_footer{
+    z-index: 1;
+}
 .array{
     display: flex;
 }
+.divs{
+    background-color: white;
+    height: 80%;
+}
 .coll{
+    background-color: white;
     margin-top: 17%;
     padding: 0;
 }

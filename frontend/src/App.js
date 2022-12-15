@@ -35,7 +35,7 @@ function App() {
           <Route path="account" element={<Account/>}></Route>
           <Route path="login_cart" element={<Cart_login/>} ></Route>
           <Route path="post" element={<Post/>}></Route>
-          <Route path="search" element={<Search/>}></Route>
+          <Route path="search/:value" element={<Search/>}></Route>
           <Route path="wishlist" element={<Wishlist/>}></Route>
           <Route path="account/order" element={<Order/>}>
             <Route path="" element={<Orders/>}></Route>
