@@ -10,8 +10,29 @@ const Login2=()=>{
     }
     const handleClick = event => {
         event.preventDefault();
-        //password
+        signin()
       };
+      const signin=async()=>{
+        var details={
+          'username':segment,
+          'password':password
+        };
+        var formBody=[];
+        for (var property in details){
+          var encodedKey=encodeURIComponent(property);
+          var encodedValue=encodeURIComponent(details[property]);
+          formBody.push(encodedKey+'='+encodedValue);
+        }
+        formBody=formBody.join('&');
+        const data_=await fetch("http://localhost:5000/auth/signin",{
+          method:'POST',
+          headers:{
+            "Content-Type":"application/x-www-form-urlencoded"
+          },
+          body:formBody
+        }).then(res=>res.json())
+        window.location.href=`http://localhost:3000?id=${segment}`;
+      }
     return(
         <div className="whole">
         <Link to="/"><img src={white}></img></Link>
@@ -20,7 +41,7 @@ const Login2=()=>{
             <p>{segment} .Change</p>
             <label>Password</label><br></br>
             <input type="password" className="password" onChange={handleChange_pass}></input><br></br>
-            <Link to="/"><button className="continue">Sign in</button></Link>
+            <button className="continue" onClick={handleClick}>Sign in</button>
             <input type="checkbox"></input>Keep me signed in. Details
         </div>
         <h5>
