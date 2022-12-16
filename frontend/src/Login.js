@@ -26,7 +26,7 @@ const Login=()=>{
         <h4>
             New to Amazon?
         </h4>
-        <button className="create">Create your Amazon account</button>
+        <Link to="/signup"><button className="create">Create your Amazon account</button></Link>
         <hr></hr>
         <h5>
                 <ul>
