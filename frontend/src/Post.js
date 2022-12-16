@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./main_components/Footer";
 import "./post.css"
 const Post=(props)=>{
     return (
@@ -54,6 +55,7 @@ const Post=(props)=>{
         <h1>Product description</h1>
         <h1>Product details</h1>
         </div>
+        <Footer/>
         </>
     )
 }
