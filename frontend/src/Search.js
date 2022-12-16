@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./search.css"
 import Show from "./Show";
+import Footer from "./main_components/Footer"
 import Sidebar from "./Sidebar";
 const Search=()=>{
     return(
@@ -21,6 +22,7 @@ const Search=()=>{
 <Sidebar/>
 <Show />
 </div>
+<Footer/>
 </div>
     )
 }
