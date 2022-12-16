@@ -21,7 +21,29 @@ const Main=()=>{
             setDisplay(segment)
             setFlag(`?id=${window.location.href.split("=").pop()}`)
         }
+        console.log(segment)
     })
+    const queryString=window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id_=()=>{
+        if( window.location.href.split('/')[3]=='null')
+        return "null"
+        if(segment=="http://localhost:3000/")
+        return "null"
+        else if (urlParams.get('id')==null && window.location.href.split('/')[3]!='null')
+        return window.location.href.split('/')[3]
+        else if (urlParams.get('id')==null )
+        return null
+        else 
+        return urlParams.get('id')
+    }
+   
+    const cart_location=()=>{
+        if (id_()=='null' || id_()==null)
+        return "/cart"
+        else 
+        return "/login_cart"
+    }
     const [final,setFinal]=useState('')
     const [text,setText]=useState('All')
     const search_text=(event)=>{
@@ -78,7 +100,7 @@ const Main=()=>{
                 <option value="Stamps">Stamps</option>
             </select>
             <input type="text" onChange={search_text}></input>
-            <div className="search_logo"><a href={'/search/'+text}><img src={search}></img></a></div>
+            <div className="search_logo"><Link to={id_()+'/search/'+text}><img src={search}></img></Link></div>
             </div></li>
             <li><img src={flag_}></img></li>
             <Link to={flag}><li>
@@ -87,7 +109,7 @@ const Main=()=>{
             </li>
             </Link>
             <li><img src={order}></img></li>
-            <li><Link to="/cart"><img src={cart}></img></Link></li>
+            <li><Link to={id_()+cart_location()}><img src={cart}></img></Link></li>
         </ul>
     </nav>
     <div className="browse">
