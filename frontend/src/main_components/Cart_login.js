@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "./Footer";
 import "./cart.css"
 import Card from "./Contain";
 const Cart_login=(props)=>{
+    useEffect(()=>{
+        get_cart_items()
+    })
+    const get_cart_items=async ()=>{
+        const data_=await fetch("http://localhost:5000/user/cart/get",{
+            method:'POST',
+            headers:{
+              "Content-Type":"application/x-www-form-urlencoded"
+            }
+          }).then(res=>res.json())
+          .then(data=>console.log(data))
+          .catch(err=>console.log(err))
+    }
     return(
         <>
         <div className="main">
