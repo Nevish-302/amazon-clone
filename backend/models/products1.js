@@ -2,6 +2,7 @@ const {Schema, default: mongoose} = require(`mongoose`)
 
 const product1 = new Schema(
     {
+        _id:{type:String},
         name :{type : String},
         url : {type : String},
         in_stock : {type : String},

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./main_components/Footer";
 import "./post.css"
 const Post=(props)=>{
@@ -16,7 +16,31 @@ const Post=(props)=>{
         else 
         return 0;
     }
-    console.log(found())
+    const itemid=urlParams.get('itemid')
+    const [value,setValue]=useState("1")
+    const getting_quantity=(e)=>{
+        setValue(e.target.value);
+    }
+    const send_cart=async()=>{
+        var details={
+            'item_s':[{id:itemid,number:value}]
+          };
+          var formBody=[];
+          for (var property in details){
+            var encodedKey=encodeURIComponent(property);
+            var encodedValue=encodeURIComponent(details[property]);
+            formBody.push(encodedKey+'='+encodedValue);
+          }
+          formBody=formBody.join('&');
+          const data_=await fetch("http://localhost:5000/user/cart/add",{
+            method:'POST',
+            headers:{
+              "Content-Type":"application/x-www-form-urlencoded"
+            },
+            body:formBody
+          }).then(res=>res.json())
+          .catch(err=>alert('YOU NEED TO LOG IN FIRST'))
+    }
     return (
         <>
         <div className="main_body">
@@ -54,12 +78,30 @@ const Post=(props)=>{
                 <h2>Available to ship in {found()} days</h2>
                 <h3>Sold by {author} and Fulfilled by Amazon</h3>
                 <h3>Quantity
-                <select>
-                    <option>1</option>
-                    <option>2</option>
+                <select value={value} onChange={getting_quantity}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
                 </select>
                 </h3>
-                <button className="signin btnsignin">Add to Cart</button>
+                <button className="signin btnsignin" onClick={send_cart}>Add to Cart</button>
                 <button >Add to Wishlist</button>
                 <button className="continue btncontinue">Buy Now</button>
             </div>

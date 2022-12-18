@@ -15,11 +15,12 @@ const Show=(props)=>{
         .then(data=>setAll(data.items))
         .catch(err=>console.error("Error",err));
     }
+
     return(
         < div className="Show">
             <div className="container_Show">
             { all.map((data)=>
-            <a href={`http://localhost:3000/${id2}/post/?images=${data.images}&name=${data.name}&source=${data.source}&product_description=${data.brand}&price=${data.price}&in_stock=${data.in_stock}`}><Item title={data.name.substring(0,30)} cost={data.price} img={data.images}/></a>
+            <a href={`http://localhost:3000/${id2}/post/?images=${data.images}&name=${data.name}&source=${data.source}&product_description=${data.brand}&price=${data.price}&in_stock=${data.in_stock}&itemid=${data._id}`}><Item title={data.name.substring(0,30)} cost={data.price} img={data.images}/></a>
             )
             }
             </div>
